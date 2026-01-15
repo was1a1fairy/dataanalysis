@@ -1,6 +1,8 @@
 import numpy as np
 
+print()
 #task1
+print()
 
 temps = np.array([15.2, 16.8, 14.5, 17.0, 16.1])
 print(np.sum(temps))
@@ -8,13 +10,17 @@ print(np.average(temps))
 print(np.amax(temps))
 print(np.amin(temps))
 
+print()
 # task2
+print()
 
 h1 = np.array([45, 50, 47])
 h2 = np.array([48, 46, 52])
 print(h1+h2,h1*h2,h1@h2)
 
+print()
 # task3
+print()
 
 x = np.array([
     [20.1, 20.3, 19.8],
@@ -28,7 +34,9 @@ print(np.sum(x,axis=1))
 print(np.var(x,axis=0,ddof=1))
 print(np.argmin(np.var(x,axis=0,ddof=1)))
 
+print()
 # task4
+print()
 
 z = np.array([
     [20.1, 20.3, 19.8],
@@ -43,3 +51,21 @@ col_range = col_max - col_min
 print(col_range)
 print((z - col_min)/col_range)
 print(np.sum(((z - col_min)/col_range), axis=0))
+
+print()
+# task5
+print()
+
+ph = np.array([
+    [7.1, 7.4, 7.0],
+    [6.9, 7.2, 7.1],
+    [7.3, 7.5, 7.2],
+    [7.0, 7.1, 6.8],
+    [6.8, 6.9, 6.7],
+    [7.4, 7.6, 7.3]
+])
+
+print(ph.mean(axis=1))
+print(ph.sum(axis=0))
+print(ph.sum(axis=1))
+print(ph.var(axis=0, ddof=1))
