@@ -69,3 +69,26 @@ print(ph.mean(axis=1))
 print(ph.sum(axis=0))
 print(ph.sum(axis=1))
 print(ph.var(axis=0, ddof=1))
+
+
+print()
+# task6
+print()
+
+consumption = np.array([
+[ 8, 6, 5], # Mon
+[10, 7, 6], # Tue
+[ 9, 8, 7], # Wed
+[11, 10, 9], # Thu
+[14, 12, 11], # Fri
+[16, 15, 13], # Sat
+[12, 11, 10] # Sun
+])
+days = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun']
+houses = ['H1','H2','H3']
+
+print(consumption.sum(axis=0))
+print(consumption.sum(axis=1))
+print(consumption.mean(axis=0))
+print([days[i] for i in consumption.argmax(axis=1)])
+print(consumption.var(axis=0, ddof=1))
