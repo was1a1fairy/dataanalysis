@@ -27,3 +27,19 @@ print(np.mean(x,axis=0))
 print(np.sum(x,axis=1))
 print(np.var(x,axis=0,ddof=1))
 print(np.argmin(np.var(x,axis=0,ddof=1)))
+
+# task4
+
+z = np.array([
+    [20.1, 20.3, 19.8],
+    [21.0, 20.7, 20.2],
+    [19.5, 19.8, 19.3],
+    [20.8, 21.1, 20.6]
+])
+
+col_min = np.min(z,axis=0)
+col_max = np.max(z,axis=0)
+col_range = col_max - col_min
+print(col_range)
+print((z - col_min)/col_range)
+print(np.sum(((z - col_min)/col_range), axis=0))
