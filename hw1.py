@@ -92,3 +92,22 @@ print(consumption.sum(axis=1))
 print(consumption.mean(axis=0))
 print([days[i] for i in consumption.argmax(axis=1)])
 print(consumption.var(axis=0, ddof=1))
+
+print()
+# task7
+print()
+
+sensors = np.array([
+[15, 101, 20, 0.5],
+[16, 100, 21, 0.6],
+[15, 102, 19, 0.4],
+[17, 103, 22, 0.7],
+[18, 104, 23, 0.6],
+[19, 105, 24, 0.8],
+[17, 103, 22, 0.5]], dtype=float)
+types = ['TempSensor','PressureSensor','FlowSensor','VibrationSensor']
+
+print(sensors.sum(axis=0))
+print(sensors.mean(axis=0))
+print(sensors.var(axis=0, ddof=1))
+print(types[np.argmax(sensors.sum(axis=0))])
