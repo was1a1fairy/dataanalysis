@@ -33,4 +33,13 @@ print(f"\nСреднее для каждого столбца - {alcohol.mean()}
       
       f"Максимум - {np.max(alcohol)},"
       f" {np.max(volatile_acidity)},{np.max(sulphates)},"
-      f" {np.max(pH)}, {np.max(quality)}\n\n")
+      f" {np.max(pH)}, {np.max(quality)}\n")
+
+
+# task2
+
+max_q = np.max(quality)
+mask = [q == max_q for q in quality]
+res_ph = pH[mask]
+print(f"tsk2: Средний ph - {res_ph.mean()}")
+
