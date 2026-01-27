@@ -43,3 +43,10 @@ mask = [q == max_q for q in quality]
 res_ph = pH[mask]
 print(f"tsk2: Средний ph - {res_ph.mean()}")
 
+
+# task3
+
+min_q = quality.min()
+max_q = quality.max()
+quality_norm = (quality - min_q)/(max_q - min_q)
+print(f"task3: quality нормализована. мин знач - {quality_norm.min()}, макс знач - {quality_norm.max()}.")
