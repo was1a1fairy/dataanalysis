@@ -1,4 +1,6 @@
 import numpy as np
+
+
 # alcohol,volatile acidity,sulphates,pH,quality
 dataset = np.loadtxt(
 "wine_quality.csv",
@@ -7,15 +9,17 @@ skiprows=1, # пропускаем строку с названиями коло
 )
 # dataset.shape -> (N, 5)
 # Для удобства можно выделить колонки:
+
 alcohol = dataset[:, 0]
 volatile_acidity = dataset[:, 1]
 sulphates = dataset[:, 2]
 pH = dataset[:, 3]
 quality = dataset[:, 4]
 
+
 # task1
 
-print(f"\nСреднее для каждого столбца - {alcohol.mean()},"
+print(f"\ntask1:\n\nСреднее для каждого столбца - {alcohol.mean()},"
       f" {volatile_acidity.mean()},{sulphates.mean()},"
       f" {pH.mean()}, {quality.mean()}\n\n"
       
@@ -49,4 +53,38 @@ print(f"tsk2: Средний ph - {res_ph.mean()}")
 min_q = quality.min()
 max_q = quality.max()
 quality_norm = (quality - min_q)/(max_q - min_q)
-print(f"task3: quality нормализована. мин знач - {quality_norm.min()}, макс знач - {quality_norm.max()}.")
+print(f"\ntask3: quality нормализована. "
+      f"мин знач - {quality_norm.min()},"
+      f" макс знач - {quality_norm.max()}.")
+
+# task4
+
+# dataset[:,0] = (dataset[:,0] - dataset[:,0].mean())/dataset[:,0].std()
+# print(f"task4: {np.mean(dataset[:,0])}")
+# print(np.std(dataset[:,0]))
+
+# task5
+
+mask = quality >= 7
+res = dataset[mask]
+print("\ntask5: ", res[:,0].mean())
+print(res[:,4].mean())
+print(mask.sum())
+
+# task6
+
+indexes = np.argsort(alcohol)[:5]
+for i in indexes[::-1]:
+      print("\ntask6: ", *dataset[i,(0,4)])
+
+# task7
+
+print("\ntask7:")
+print((quality == np.min(quality)).sum())
+print((quality == np.max(quality)).sum())
+minn = np.mean(quality) - np.std(quality)
+maxx = np.mean(quality) + np.std(quality)
+print(np.sum((quality >= minn) & (quality <= maxx)))
+
+# task8
+
