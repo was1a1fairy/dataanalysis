@@ -88,3 +88,10 @@ print(np.sum((quality >= minn) & (quality <= maxx)))
 
 # task8
 
+alcohol_m = alcohol - alcohol.mean()
+quality_m = quality - quality.mean()
+print("\ntask 8:\n", np.dot(alcohol_m,quality_m))
+len_alc = np.linalg.norm(alcohol_m)
+len_qua = np.linalg.norm(quality_m)
+print(np.dot(alcohol_m,quality_m)/(len_alc*len_qua))
+# при увеличении алкоголя качествов среднем растёт
